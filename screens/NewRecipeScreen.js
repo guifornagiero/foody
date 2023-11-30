@@ -131,7 +131,7 @@ export default function NewRecipeScreen() {
         </View>
 
         {modoPreparos.length > 0 ? (
-          <View className="px-3 m-5 mb-2">
+          <View className="px-3 m-5 mb-3">
             {modoPreparos.map((modoPreparo, index) => (
               <Text key={index}>
                 {++index}. {modoPreparo}
@@ -139,11 +139,11 @@ export default function NewRecipeScreen() {
             ))}
           </View>
         ) : (
-          <View></View>
+          <View className="mb-1"></View>
         )}
 
         <View className="mt-5 flex flex-col">
-          <View className="flex flex-row justify-around mb-1">
+          <View className="flex flex-row justify-around mb-2">
             <View className="ml-2 flex flex-row gap-1">
               <Checkbox
                 value={vegan}
