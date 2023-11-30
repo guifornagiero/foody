@@ -11,6 +11,7 @@ import {
 } from "react-native"
 import colors from "../public/colors"
 import Checkbox from "expo-checkbox"
+import { insertReceita } from "../public/firebase"
 
 export default function NewRecipeScreen() {
   const [title, setTitle] = useState("")
@@ -45,9 +46,6 @@ export default function NewRecipeScreen() {
       return
     }
 
-    alert("Receita adicionada!")
-    Vibration.vibrate(500)
-
     let novaReceita = {
       title,
       description,
@@ -55,6 +53,11 @@ export default function NewRecipeScreen() {
       ingredients,
       modoPreparos
     }
+
+    insertReceita(novaReceita)
+
+    alert("Receita adicionada!")
+    Vibration.vibrate(500)
 
     console.log(novaReceita)
 
