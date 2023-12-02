@@ -11,7 +11,7 @@ import {
 } from "react-native"
 import colors from "../public/colors"
 import Checkbox from "expo-checkbox"
-import { insertReceita } from "../public/firebase"
+import { postRecipe } from "../public/firebase"
 
 export default function NewRecipeScreen() {
   const [title, setTitle] = useState("")
@@ -54,7 +54,7 @@ export default function NewRecipeScreen() {
       modoPreparos
     }
 
-    insertReceita(novaReceita)
+    postRecipe(novaReceita)
 
     alert("Receita adicionada!")
     Vibration.vibrate(500)
@@ -149,6 +149,7 @@ export default function NewRecipeScreen() {
           <View className="flex flex-row justify-around mb-2">
             <View className="ml-2 flex flex-row gap-1">
               <Checkbox
+                color={colors.primary}
                 value={vegan}
                 onValueChange={(valor) => setVegan(valor)}
               />
@@ -156,6 +157,7 @@ export default function NewRecipeScreen() {
             </View>
             <View className="flex flex-row gap-1">
               <Checkbox
+                color={colors.primary}
                 value={!vegan}
                 onValueChange={(valor) => setVegan(!valor)}
               />
