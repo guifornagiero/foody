@@ -1,4 +1,4 @@
-import { Text, View, Button, Image, Pressable } from "react-native"
+import { Text, View, Button, Image, Modal } from "react-native"
 import RecipeCardModal from "./RecipeCardModal"
 import { useState } from "react"
 
@@ -30,11 +30,28 @@ function RecipeCard({
         <Text className="ml-2">{description}</Text>
 
         <View className="rounded-sm w-20 ml-32 absolute mt-16">
-          <Button title="Ver mais" color={colors.primary} />
+          <Button
+            title="Ver mais"
+            color={colors.primary}
+            onPress={() => setOpenModal(true)}
+          />
         </View>
-
-        <RecipeCardModal isOpen={openModal} />
       </View>
+
+      <Modal
+        visible={openModal}
+        transparent={true}
+        onRequestClose={() => setOpenModal(false)}
+      >
+        <RecipeCardModal
+          title={title}
+          description={description}
+          ingredients={ingredients}
+          prepareMethods={prepareMethods}
+          vegan={vegan}
+          closeModal={() => setOpenModal(false)}
+        />
+      </Modal>
     </View>
   )
 }

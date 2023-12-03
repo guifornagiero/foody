@@ -4,9 +4,11 @@ import { MaterialIcons } from "@expo/vector-icons"
 import { useEffect, useState } from "react"
 import { getAllRecipes } from "../public/firebase"
 import colors from "../public/colors"
+import RecipeCardModal from "../components/RecipeCardModal"
 
 export default function RecipesScreen() {
   const [recipes, setRecipes] = useState([])
+  const [openModal, setOpenModal] = useState(false)
 
   useEffect(() => {
     getData()
@@ -40,8 +42,8 @@ export default function RecipesScreen() {
               key={index}
               title={recipe.title}
               description={recipe.description}
-              ingredients={recipe.ingredients}
-              prepareMethods={recipe.prepareMethods}
+              ingredients={recipe.ingredientes}
+              prepareMethods={recipe.modoPreparos}
               vegan={recipe.vegan}
             />
           ))}
