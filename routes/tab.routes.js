@@ -9,39 +9,40 @@ const Tab = createBottomTabNavigator()
 
 export default function TabRoutes() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
-        <Tab.Screen
-          name="recipes"
-          component={RecipesScreen}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Ionicons name="fast-food" size={size} color={color} />
-            ),
-            tabBarLabel: "Receitas",
-            tabBarLabelStyle: {
-              fontSize: 15
-            },
-            tabBarActiveTintColor: colors.primary,
-            tabBarActiveBackgroundColor: colors.light_primary
-          }}
-        />
-        <Tab.Screen
-          name="new-recipes"
-          component={NewRecipeScreen}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Entypo name="new-message" size={size} color={color} />
-            ),
-            tabBarLabel: "Nova receita",
-            tabBarLabelStyle: {
-              fontSize: 15
-            },
-            tabBarActiveTintColor: colors.primary,
-            tabBarActiveBackgroundColor: colors.light_primary
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      initialRouteName="recipes"
+      screenOptions={{ headerShown: false }}
+    >
+      <Tab.Screen
+        name="recipes"
+        component={RecipesScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="fast-food" size={size} color={color} />
+          ),
+          tabBarLabel: "Receitas",
+          tabBarLabelStyle: {
+            fontSize: 15
+          },
+          tabBarActiveTintColor: colors.primary,
+          tabBarActiveBackgroundColor: colors.light_primary
+        }}
+      />
+      <Tab.Screen
+        name="new-recipes"
+        component={NewRecipeScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Entypo name="new-message" size={size} color={color} />
+          ),
+          tabBarLabel: "Nova receita",
+          tabBarLabelStyle: {
+            fontSize: 15
+          },
+          tabBarActiveTintColor: colors.primary,
+          tabBarActiveBackgroundColor: colors.light_primary
+        }}
+      />
+    </Tab.Navigator>
   )
 }

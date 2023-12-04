@@ -39,14 +39,14 @@ function RecipeCardModal({
 
       <Text className="mt-4 font-medium text-lg">INGREDIENTES</Text>
       {ingredients.map((ingredient, index) => (
-        <Text>
+        <Text key={index}>
           {++index}. {ingredient}
         </Text>
       ))}
 
       <Text className="mt-4 font-medium text-lg">MODO DE PREPARO</Text>
       {prepareMethods.map((modo, index) => (
-        <Text>
+        <Text key={index}>
           {++index}. {modo}
         </Text>
       ))}
