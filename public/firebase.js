@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getDatabase, ref, push, get, child } from "firebase/database"
-import { firebaseConfig } from "../config"
+import { firebaseConfig } from "../config.js"
 
 const app = initializeApp(firebaseConfig)
 
