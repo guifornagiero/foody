@@ -26,10 +26,10 @@ function RecipeCard({
       )}
 
       <View className="h-auto w-52 ml-2 outline-none">
-        <Text className="font-bold text-lg ml-2">{title}</Text>
-        <Text className="ml-2">{description}</Text>
+        <Text className="font-bold text-lg ml-1 mr-2">{title}</Text>
+        <Text className="ml-1 mr-2">{description}</Text>
 
-        <View className="rounded-sm w-20 ml-32 absolute mt-16">
+        <View className="rounded-sm w-20 ml-28 absolute mt-16">
           <Button
             title="Ver mais"
             color={colors.primary}
